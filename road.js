@@ -13,6 +13,13 @@ class Road{
         this.bottom = infinity;
 
     }
+    getLaneCenter(laneIndex)
+    {
+        const laneWidth = this.width / this.laneCount;
+        return this.left + laneWidth/2 + Math.min(
+            laneIndex, this.laneCount - 1
+        )*laneWidth;
+    }
 
     draw(ctx)
     {
@@ -41,6 +48,13 @@ class Road{
         ctx.stroke();
 
        }
+       ctx.setLineDash([]);
+       this.borders.forEach(border => {
+         ctx.beginPath();
+         ctx.moveTo(border[0].x, border[0].y);
+         ctx.lineTo(border[1].x, border[1].y);
+         ctx.stroke();
+       })
    } 
 }
 

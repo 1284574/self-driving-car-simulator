@@ -1,6 +1,5 @@
 class Controls{
-    constructor()
-    {
+    constructor(){
         this.forward=false;
         this.left=false;
         this.right=false;
@@ -24,10 +23,8 @@ class Controls{
                 case "ArrowDown":
                     this.reverse=true;
                     break;
-                
             }
         }
-
         document.onkeyup=(event)=>{
             switch(event.key){
                 case "ArrowLeft":
@@ -42,7 +39,6 @@ class Controls{
                 case "ArrowDown":
                     this.reverse=false;
                     break;
-                
             }
         }
     }
